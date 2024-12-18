@@ -5,7 +5,7 @@ from langchain_community.retrievers import AmazonKnowledgeBasesRetriever
 
 #Define the retriever
 retriever = AmazonKnowledgeBasesRetriever(
-  knowledge_base_id= "TMRWOAS0VO",
+  knowledge_base_id= "T2EPDBCTOF",
   retrieval_config= {"vectorSearchConfiguration" : {"numberOfResults": 4}}
 )
 
@@ -31,7 +31,9 @@ while True:
   query = input("\nAsk a question:\n")
 
   #invoke the model
-  output = qa.invoke (query)
+  output = qa.invoke(
+    query
+)
 
   #display the result
   print (output['result'])
