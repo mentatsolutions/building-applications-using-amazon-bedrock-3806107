@@ -1,12 +1,11 @@
 #Imports
-from http import client
 from langchain.chains import RetrievalQA
 from langchain_community.llms import Bedrock
 from langchain_community.retrievers import AmazonKnowledgeBasesRetriever
 
 #Define the retriever
 retriever = AmazonKnowledgeBasesRetriever(
-  knowledge_base_id= "T2EPDBCTOF",
+  knowledge_base_id= "BNWVM7RH1W",
   retrieval_config= {"vectorSearchConfiguration" : {"numberOfResults": 4}}
 )
 
@@ -18,7 +17,7 @@ model_kwargs_claude = {
 }
 
 #Configure llm
-llm = Bedrock (model_id = "anthropic.claude-instant-v1", model_kwargs = model_kwargs_claude )
+llm = Bedrock(model_id = "anthropic.claude-instant-v1", model_kwargs = model_kwargs_claude)
 
 #Configure the chain
 qa = RetrievalQA.from_chain_type(
@@ -32,9 +31,7 @@ while True:
   query = input("\nAsk a question:\n")
 
   #invoke the model
-  output = qa.invoke(
-    query
-)
+  output = qa.invoke(query)
 
   #display the result
   print (output['result'])
