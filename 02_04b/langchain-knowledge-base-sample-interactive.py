@@ -1,4 +1,5 @@
 #Imports
+from http import client
 from langchain.chains import RetrievalQA
 from langchain_community.llms import Bedrock
 from langchain_community.retrievers import AmazonKnowledgeBasesRetriever
