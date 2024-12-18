@@ -8,12 +8,12 @@ from langchain_community.chat_message_histories import StreamlitChatMessageHisto
 from langchain.prompts.prompt import PromptTemplate
 
 #Configure streamlit app
-st.set_page_config(page_title="Employee HR Bot")
-st.title("Employee HR Bot")
+st.set_page_config(page_title="Finacial Advisor Bot")
+st.title("Financial Advisor Bot")
 
 #Define the retriever
 retriever = AmazonKnowledgeBasesRetriever(
-    knowledge_base_id="",
+    knowledge_base_id="CCGIVD5NOL",
     retrieval_config={"vectorSearchConfiguration": {"numberOfResults": 4}},
 )
 
